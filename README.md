@@ -1,24 +1,39 @@
-# README
+# 釣り人の夕食
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+### サイトテーマ
+釣った魚をおいしく食べるための料理紹介コミュニティサイトおよび、食べたい魚を釣りに行ける釣り船検索サイト
 
-Things you may want to cover:
 
-* Ruby version
+### テーマを選んだ理由
+- 趣味の釣りを前職の食で盛り上げあげられないかと考えた為。
+  釣りたての新鮮な魚を食べられるのは釣り人の特権だと思います。釣りに行った時に釣れた魚をどう料理すればおいしく
+食べることができるか、また知らない料理方法で食べてみたいけど分からない時があった事が理由です。
+また初めて釣りをしてみたい人にも利用して頂きたいと考えております。
+アフターコロナでの楽しく休日を過ごすためのツールになってほしいと思います。
 
-* System dependencies
+### ターゲットユーザ
+- ファミリー
+- 釣り好きな人
+- 料理好きな人
+- 初めて釣りに挑戦してみたい人
+- 魚料理を作る為にレシピを探してる人
 
-* Configuration
+### 主な利用シーン
+- 釣れた魚をどうしようかと考えてる時
+- ファミリーで休日を釣りで楽しみたい時
+- 魚料理を紹介したい時
 
-* Database creation
+## 設計書
 
-* Database initialization
 
-* How to run the test suite
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* Services (job queues, cache servers, search engines, etc.)
+## 使用素材
+- 統合検索機能　https://qiita.com/hagii-x/items/6a426266f3b81a347824
 
-* Deployment instructions
-
-* ...
