@@ -1,0 +1,3 @@
+$('.comment-textarea').val("")
+$('.recipe-comments-counter').html("<%= j(render 'recipe_comments/counter', recipe: @comment.recipe) %>")
+$('.recipe-comments-index').html("<%= j(render 'recipe_comments/index', recipe: @comment.recipe) %>")

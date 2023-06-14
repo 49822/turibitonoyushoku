@@ -1,0 +1,26 @@
+<table class='table table-hover table-inverse'>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% recipes.each do |recipe| %>
+      <tr>
+        <td><%= link_to(recipe.user) do %>
+          <%= image_tag recipe.user.get_profile_image, size:'50x50' %>
+          <% end %>
+        </td>
+        <td><%= link_to recipe.title,recipe, class: "book_#{recipe.id}" %></td>
+        <td><%= recipe.body %></td>
+        <td class=<%= "favorite-" + recipe.id.to_s %> >
+            <%= render "favorites/btn", recipe: book %>
+        </td>
+        <td><%= render "recipe_comments/counter", recipe: recipe %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

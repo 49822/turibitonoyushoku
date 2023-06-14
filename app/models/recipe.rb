@@ -1,6 +1,6 @@
-class Book < ApplicationRecord
+class Recipe < ApplicationRecord
   belongs_to :user
-  has_many :book_comments, dependent: :destroy
+  has_many :recipe_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   
   validates :title,presence:true
@@ -12,13 +12,13 @@ class Book < ApplicationRecord
 	
   def self.search_for(content, method)
     if method == 'perfect'
-      Book.where(title: content)
+      Recipe.where(title: content)
     elsif method == 'forward'
-      Book.where('title LIKE ?', content+'%')
+      Recipe.where('title LIKE ?', content+'%')
     elsif method == 'backward'
-      Book.where('title LIKE ?', '%'+content)
+      Recipe.where('title LIKE ?', '%'+content)
     else
-      Book.where('title LIKE ?', '%'+content+'%')
+      Recipe.where('title LIKE ?', '%'+content+'%')
     end
   end
 end

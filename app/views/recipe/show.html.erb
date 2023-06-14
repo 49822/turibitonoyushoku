@@ -1,0 +1,41 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <h2>User info</h2>
+      <%= render 'users/info', user: @recipe.user %>
+      <h2 class="mt-3">New recipe</h2>
+      <%= render 'form', recipe: Recipe.new %>
+    </div>
+    <div class='col-md-8 offset-md-1'>
+  		<h2>recipe detail</h2>
+  		<table class='table'>
+  		  <tr>
+          <td><%= link_to(@recipe.user) do %>
+            <%= image_tag @recipe.user.get_profile_image, size:"100x100" %><br>
+            <%= @recipe.user.name %>
+            <% end %>
+          </td>
+          <td><%= link_to @recipe.title, @recipe %></td>
+          <td><%= @recipe.body %></td>
+          <td class=<%= "favorite-" + @recipe.id.to_s %> >
+            <%= render "favorites/btn",recipe: @recipe %>
+          </td>
+          <td class="recipe-comments-counter">
+            <%= render "recipe_comments/counter", recipe: @recipe %>
+          </td>
+          <% if @recipe.user == current_user %>
+            <td><%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-sm btn-success edit_recipe_#{@recipe.id}" %></td>
+            <td><%= link_to 'Destroy', @recipe, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_recipe_#{@recipe.id}" %></td>
+          <% end %>
+        </tr>
+      </table>
+
+      <div class="recipe-comments-index">
+        <%= render "recipe_comments/index", recipe: @recipe %>
+      </div>
+
+      <%= render "recipe_comments/form", : @recipe, recipe_comment: @recipe_comment %>
+
+    </div>
+  </div>
+</div>
