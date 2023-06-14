@@ -12,7 +12,7 @@ class RecipeCommentsController < ApplicationController
   end
 
   private
-  def book_comment_params
+  def recipe_comment_params
     params.require(:recipe_comment).permit(:comment)
   end
 end
