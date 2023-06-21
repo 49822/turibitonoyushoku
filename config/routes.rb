@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root :to =>"homes#top"
   get "home/about"=>"homes#about"
 
-  resources :books, only: [:index,:show,:edit,:create,:destroy,:update] do
-    resources :book_comments, only: [:create, :destroy]
+  resources :recipe, only: [:index,:show,:edit,:create,:destroy,:update] do
+    resources :recipe_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
   end
   resources :users, only: [:index,:show,:edit,:update] do
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :event_notices, only: [:new, :create]
     get "event_notices" => "event_notices#sent"
   end
-  
-  
+
+
   get '/search', to: 'searches#search'
 end
