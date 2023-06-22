@@ -14,10 +14,10 @@
           <%= image_tag recipe.user.get_profile_image, size:'50x50' %>
           <% end %>
         </td>
-        <td><%= link_to recipe.title,recipe, class: "book_#{recipe.id}" %></td>
+        <td><%= link_to recipe.title,recipe, class: "recipe_#{recipe.id}" %></td>
         <td><%= recipe.body %></td>
         <td class=<%= "favorite-" + recipe.id.to_s %> >
-            <%= render "favorites/btn", recipe: book %>
+            <%= render "favorites/btn", recipe: recipe %>
         </td>
         <td><%= render "recipe_comments/counter", recipe: recipe %></td>
       </tr>
