@@ -1,13 +1,13 @@
 <div class='container'>
   <div class='row'>
     <div class='col-md-3'>
-      <h2>User info</h2>
+      <h2>ユーザー情報</h2>
       <%= render 'users/info', user: @recipe.user %>
-      <h2 class="mt-3">New recipe</h2>
+      <h2 class="mt-3">新しいご飯</h2>
       <%= render 'form', recipe: Recipe.new %>
     </div>
     <div class='col-md-8 offset-md-1'>
-  		<h2>recipe detail</h2>
+  		<h2>レシピ　詳細</h2>
   		<table class='table'>
   		  <tr>
           <td><%= link_to(@recipe.user) do %>
@@ -24,8 +24,8 @@
             <%= render "recipe_comments/counter", recipe: @recipe %>
           </td>
           <% if @recipe.user == current_user %>
-            <td><%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-sm btn-success edit_recipe_#{@recipe.id}" %></td>
-            <td><%= link_to 'Destroy', @recipe, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_recipe_#{@recipe.id}" %></td>
+            <td><%= link_to '編集', edit_recipe_path(@recipe), class: "btn btn-sm btn-success edit_recipe_#{@recipe.id}" %></td>
+            <td><%= link_to '削除', @recipe, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_recipe_#{@recipe.id}" %></td>
           <% end %>
         </tr>
       </table>

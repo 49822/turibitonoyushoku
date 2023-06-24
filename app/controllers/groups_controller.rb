@@ -7,12 +7,12 @@ class GroupsController < ApplicationController
   end
 
   def index
-    @book = Book.new
+    @recioe = Recipe.new
     @groups = Group.all
   end
 
   def show
-    @book = Book.new
+    @recipi = Recipi.new
     @group = Group.find(params[:id])
   end
   
