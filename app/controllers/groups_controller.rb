@@ -12,10 +12,10 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @recipi = Recipi.new
+    @recipi = Recipe.new
     @group = Group.find(params[:id])
   end
-  
+
   def create
     @group = Group.new(group_params)
     @group.owner_id = current_user.id
