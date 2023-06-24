@@ -12,7 +12,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @recipi = Recipe.new
+    @recipe = Recipe.new
     @group = Group.find(params[:id])
   end
 
